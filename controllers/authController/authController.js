@@ -2,7 +2,8 @@ require('dotenv').config()
 const User = require("../../models/userModel");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken")
-exports.singup = async (req, res, next) => {
+
+exports.singup = async (req, res) => {
     const { name, username, email, password, profile } = req.body;
     try {
         var salt = await bcrypt.genSalt(10);
